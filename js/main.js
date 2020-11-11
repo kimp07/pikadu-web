@@ -54,6 +54,10 @@ const setUsers = {
 		}		
 	},
 
+	/**
+	 * 
+	 * @param {function} handler 
+	 */
 	logOut(handler) {
 		this.autorizedUser(null);
 		handler();
