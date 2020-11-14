@@ -11,7 +11,7 @@ menuToggle.addEventListener('click', function (event) {
 })
 
 // Login elements
-const loginElem = document.querySelector('.login');
+const loginDiv = document.querySelector('.login');
 const loginForm = document.querySelector('.login-form');
 const emailInput = document.querySelector('.login-email');
 const passwordInput = document.querySelector('.login-password');
@@ -21,6 +21,13 @@ const loginSignup = document.querySelector('.login-signup');
 const userElem = document.querySelector('.user');
 const logOutElem = document.querySelector('.exit');
 const userNameElem = document.querySelector('.user-name');
+const userEditElem = document.querySelector('.user-edit');
+
+// Edit profile
+const editProfileDiv = document.querySelector('.edit-profile');
+const editProfileForm = document.querySelector('.edit-profile-form');
+const editProfileCancelElem = document.querySelector('.edit-profile-cancel');
+
 
 const listUsers = [
 	{
@@ -98,11 +105,11 @@ const setUsers = {
 const toggleAuthDom = () => {
 	const user = setUsers.user;
 	if (user) {
-		loginElem.style.display = 'none';
+		loginDiv.style.display = 'none';
 		userElem.style.display = '';
 		userNameElem.textContent = user.displayName;
 	} else {
-		loginElem.style.display = '';
+		loginDiv.style.display = '';
 		userElem.style.display = 'none';
 
 	}

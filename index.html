@@ -17,7 +17,7 @@
       <a href="/" class="header-logo">
         <img class="header-logo-image" src="img/logo.svg" alt="logo: Pikadu">
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav" aria-label="Menu">
         <ul class="header-menu">
           <li class="header-menu-item"><a href="#" class="header-menu-link">Свежее</a></li>
           <li class="header-menu-item"><a href="#" class="header-menu-link">Лучшее</a></li>
@@ -190,7 +190,7 @@
     </main>
     <!-- /.posts -->
     <aside class="sidebar">
-      <!-- login div -->
+      
       <div class="login">
         <form class="login-form">
           <h2 class="login-title">Авторизация</h2>
@@ -210,24 +210,49 @@
           <button class="login-signin" type="submit">Авторизация</button>
           <a class="login-signup" href="#">Регистрация</a>
         </form>
-
+        <!-- ./login-form -->
       </div>
-
+      <!-- ./login -->
       <div class="user">
         <a href="#" class="user-info">
           <img width="40" height="40" src="img/avatar.jpeg" alt="photo: user" class="user-avatar">
           <span class="user-name">islamovartem</span>
         </a>
         <!-- /.user-info -->
+        <a href="#" class="user-edit">
+          <svg class="icon icon-user-edit">
+            <use xlink:href="img/edit.svg#Capa_1"></use>
+          </svg>
+        </a>
         <a href="#" class="exit">
           <svg class="icon icon-exit">
             <use xlink:href="img/icons.svg#exit"></use>
           </svg>
         </a>
         <!-- /.exit -->
-      </div>
+      </div>      
       <!-- /.user -->
-      <nav class="sidebar-nav">
+      <div class="edit-profile">
+        <form class="edit-profile-form">
+          <h2 class="edit-profile-title">Авторизация</h2>
+          <input class="edit-profile-input edit-profile-name"
+            type="input"
+            name="userName"
+            minlength="3"
+            required 
+            placeholder="Введите ваше имя" />
+          <input class="edit-profile-input edit-profile-avatar"
+            type="input"
+            name="userAvatar"
+            placeholder="Введите URL вашего фото" />
+          <button class="edit-profile-sumbit" type="submit">Сохранить</button>
+          <a class="edit-profile-cancel" href="#">Отмена</a>
+        </form>
+        <!-- /.edit-profile-form -->
+      </div>
+      <!-- /.edit-profile -->
+
+      <nav class="sidebar-nav" aria-label="Side bar">
         <ul class="sidebar-menu">
           <li class="sidebar-menu-item">
             <a href="#" class="sidebar-menu-link">Ответы</a>
