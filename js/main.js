@@ -22,6 +22,7 @@ const userElem = document.querySelector('.user');
 const logOutElem = document.querySelector('.exit');
 const userNameElem = document.querySelector('.user-name');
 const userEditElem = document.querySelector('.user-edit');
+const sidebarNavDiv = document.querySelector('.sidebar-nav');
 
 // Edit profile
 const editProfileDiv = document.querySelector('.edit-profile');
@@ -99,19 +100,28 @@ const setUsers = {
 
 	autorizedUser(user) {
 		this.user = user;
+	},
+
+	editProfileShow() {
+		const user = this.user;
+		if (user) {
+			editProfileDiv.style.display = '';
+		}
 	}
 };
 
 const toggleAuthDom = () => {
 	const user = setUsers.user;
+	editProfileDiv.style.display = 'none';
 	if (user) {
 		loginDiv.style.display = 'none';
 		userElem.style.display = '';
+		sidebarNavDiv.style.display = '';
 		userNameElem.textContent = user.displayName;
 	} else {
 		loginDiv.style.display = '';
 		userElem.style.display = 'none';
-
+		sidebarNavDiv.style.display = 'none';
 	}
 };
 
@@ -137,6 +147,11 @@ logOutElem.addEventListener('click', event => {
 	event.preventDefault();
 
 	setUsers.logOut(toggleAuthDom);
+});
+
+userEditElem.addEventListener('click', event => {
+	event.preventDefault();
+	setUsers.editProfileShow();
 });
 
 toggleAuthDom();
