@@ -28,6 +28,8 @@ const sidebarNavDiv = document.querySelector('.sidebar-nav');
 const editProfileDiv = document.querySelector('.edit-profile');
 const editProfileForm = document.querySelector('.edit-profile-form');
 const editProfileCancelElem = document.querySelector('.edit-profile-cancel');
+const editProfileNameElem = document.querySelector('.edit-profile-name');
+const editProfileAvatarElem = document.querySelector('.edit-profile-avatar');
 
 
 const listUsers = [
@@ -35,13 +37,15 @@ const listUsers = [
 		id: '01',
 		email: 'alex@mail.com',
 		password: '12345',
-		displayName: 'AlexAA'
+		displayName: 'AlexAA',
+		avatarUrl: ''
 	},
 	{
 		id: '02',
 		email: 'margo@mail.com',
 		password: '12345',
-		displayName: 'MargoMM'
+		displayName: 'MargoMM',
+		avatarUrl: ''
 	}
 ];
 
@@ -105,6 +109,8 @@ const setUsers = {
 	editProfileShow() {
 		const user = this.user;
 		if (user) {
+			editProfileNameElem.value = user.displayName;
+			editProfileAvatarElem.value = user.avatarUrl;
 			editProfileDiv.style.display = '';
 		}
 	}
